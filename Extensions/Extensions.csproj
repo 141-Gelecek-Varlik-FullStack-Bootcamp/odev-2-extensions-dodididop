@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hw2_Core\Hw2_Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="VisualStudio.gitignore" />
+    <None Remove="Microsoft.Build.Tasks.Git" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="VisualStudio.gitignore" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
