@@ -6,21 +6,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using _02122021_Hw2_Extension.Models;
+using System.Xml.Linq;
+using Extensions.Infrastructure;
 
 namespace _02122021_Hw2_Extension.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        
         public HomeController(ILogger<HomeController> logger)
         {
-            
+           
             _logger = logger;
+            
         }
 
+        [HttpGet]
+        [LoginFilter]//loginfilter attribute was created to control login.
+
         public IActionResult Index()
-        {
+        {           
             return View();
         }
 
@@ -35,4 +41,6 @@ namespace _02122021_Hw2_Extension.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    
 }
